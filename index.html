@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APRILNET - Internet Solusi Desa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo APRILNET" class="logo-img">
+                APRIL<span>NET</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="tutupPendaftaran()">Beranda</a></li>
+                <li><a href="#fitur" onclick="tutupPendaftaran()">Keunggulan</a></li>
+                <li><a href="#paket" onclick="tutupPendaftaran()">Paket</a></li>
+                <li><a href="#profil" onclick="tutupPendaftaran()">Profil</a></li>
+                <li><a href="javascript:void(0)" class="btn-nav" onclick="bukaPendaftaran('Umum')">Daftar Sekarang</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="main-content">
+        <header id="home" class="hero">
+            <div class="container">
+                <div class="hero-text">
+                    <h1>Internet Cepat <br>Hingga Ke <span>Pelosok</span></h1>
+                    <p>Menghubungkan desa dengan teknologi Fiber Optic murni yang stabil dan terjangkau untuk semua warga.</p>
+                    <div class="hero-btns">
+                        <a href="#paket" class="btn-primary">Pilih Paket</a>
+                        <a href="#fitur" class="btn-secondary">Lihat Keunggulan</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="fitur" class="features-grid container section">
+            <div class="feature-item">
+                <i class="fas fa-infinity"></i>
+                <h4>Tanpa Batas (Unlimited)</h4>
+                <p>Bebas akses apa saja tanpa khawatir kuota habis atau kecepatan turun (FUP).</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-bolt"></i>
+                <h4>Kecepatan Simetris</h4>
+                <p>Kecepatan upload dan download 1:1. Kirim file besar jadi lebih instan.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-headset"></i>
+                <h4>Tim Lokal Sigap</h4>
+                <p>Teknisi kami siap datang ke rumah Anda lebih cepat jika ada kendala.</p>
+            </div>
+        </section>
+
+        <section id="paket" class="section">
+            <div class="container">
+                <h2 class="section-title">Pilihan Paket Internet</h2>
+                
+                <div class="tab-wrapper">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" data-target="rumah">Paket Rumah</button>
+                        <button class="tab-btn" data-target="voucher">Paket Voucher</button>
+                    </div>
+                </div>
+
+                <div id="paket-rumah" class="tab-content active">
+                    <div class="grid-pricing">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500" alt="Lite" class="card-img">
+                            <h3>APRIL Lite</h3>
+                            <div class="speed">30 <span>Mbps</span></div>
+                            <div class="price">Rp 199.000 <span>/bln</span></div>
+                            <ul class="card-features">
+                                <li><i class="fas fa-check"></i> Ideal 3-5 Perangkat</li>
+                                <li><i class="fas fa-check"></i> Streaming HD & Sosmed</li>
+                            </ul>
+                            <button class="btn-card" onclick="bukaPendaftaran('Lite 30 Mbps')">Pilih Paket</button>
+                        </div>
+                        <div class="card featured">
+                            <div class="badge">TERPOPULER</div>
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500" alt="Prime" class="card-img">
+                            <h3>APRIL Prime</h3>
+                            <div class="speed">50 <span>Mbps</span></div>
+                            <div class="price">Rp 275.000 <span>/bln</span></div>
+                            <ul class="card-features">
+                                <li><i class="fas fa-check"></i> Ideal 7-10 Perangkat</li>
+                                <li><i class="fas fa-check"></i> Gaming & Kerja Remote</li>
+                            </ul>
+                            <button class="btn-card" onclick="bukaPendaftaran('Prime 50 Mbps')">Pilih Paket</button>
+                        </div>
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500" alt="Pro" class="card-img">
+                            <h3>APRIL Pro</h3>
+                            <div class="speed">100 <span>Mbps</span></div>
+                            <div class="price">Rp 399.000 <span>/bln</span></div>
+                            <ul class="card-features">
+                                <li><i class="fas fa-check"></i> Kapasitas 15+ Perangkat</li>
+                                <li><i class="fas fa-check"></i> Untuk Kantor & Bisnis</li>
+                            </ul>
+                            <button class="btn-card" onclick="bukaPendaftaran('Pro 100 Mbps')">Pilih Paket</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="paket-voucher" class="tab-content">
+                    <div class="grid-pricing">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500" alt="Voucher 1 Jam" class="card-img">
+                            <h3>1 JAM</h3>
+                            <div class="speed">Voucher</div>
+                            <div class="price">Rp 2.000</div>
+                            <button class="btn-card" onclick="bukaPendaftaran('Voucher 1 Jam')">Beli Voucher</button>
+                        </div>
+                        <div class="card featured">
+						<div class="badge">TERPOPULER</div>
+                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500" alt="Voucher 3 Jam" class="card-img">
+                            <h3>3 JAM</h3>
+                            <div class="speed">Voucher</div>
+                            <div class="price">Rp 5.000</div>
+                            <button class="btn-card" onclick="bukaPendaftaran('Voucher 3 Jam')">Beli Voucher</button>
+                        </div>
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=500" alt="Voucher 1 Hari" class="card-img">
+                            <h3>1 HARI</h3>
+                            <div class="speed">Voucher</div>
+                            <div class="price">Rp 10.000</div>
+                            <button class="btn-card" onclick="bukaPendaftaran('Voucher 1 Hari')">Beli Voucher</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="profil" class="about-section">
+            <div class="about-container">
+                <div class="about-content">
+                    <h2 class="section-title-left">Tentang <span>APRILNET</span></h2>
+                    <p class="about-lead">Menghubungkan Pelosok, Membangun Masa Depan Digital Desa.</p>
+                    <p>APRILNET adalah penyedia layanan internet (ISP) mikro yang berfokus pada pemerataan akses informasi digital di wilayah pedesaan dan pelosok.</p>
+                    <div class="mission-grid">
+                        <div class="mission-item">
+                            <i class="fas fa-bullseye"></i>
+                            <h4>Visi</h4>
+                            <p>Menjadi jembatan digital terpercaya yang menghubungkan setiap rumah.</p>
+                        </div>
+                        <div class="mission-item">
+                            <i class="fas fa-rocket"></i>
+                            <h4>Misi</h4>
+                            <p>Menyediakan infrastruktur fiber optik berkualitas tinggi dengan harga terjangkau.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card"><h3>10+</h3><p>Desa Tercover</p></div>
+                    <div class="stat-card"><h3>500+</h3><p>Pelanggan Setia</p></div>
+                    <div class="stat-card"><h3>24/7</h3><p>Dukungan Teknis</p></div>
+                    <div class="stat-card"><h3>99%</h3><p>Uptime Koneksi</p></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="halaman-daftar" class="section" style="display: none;">
+        <div class="container">
+            <div class="form-container">
+                <button class="btn-back" onclick="tutupPendaftaran()"><i class="fas fa-arrow-left"></i> Kembali</button>
+                <h2 class="section-title">Formulir Pendaftaran</h2>
+                <form id="formPendaftaran">
+                    <div class="form-group">
+                        <label>Paket yang Dipilih</label>
+                        <input type="text" id="inputPaket" readonly style="background: rgba(0,242,255,0.1); border: 1px dashed var(--toska); color: var(--toska); font-weight: bold;">
+                    </div>
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" id="regNama" placeholder="Sesuai KTP" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Alamat Lengkap</label>
+                        <textarea id="regAlamat" rows="3" placeholder="Alamat pemasangan lengkap..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Kirim Pendaftaran ke WhatsApp <i class="fab fa-whatsapp"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="foot-col">
+                <div class="logo">
+                    <img src="img/logo.png" alt="Logo" class="logo-img">
+                    APRIL<span>NET</span>
+                </div>
+                <p>Memberikan layanan internet terbaik untuk masa depan digital Anda.</p>
+            </div>
+            <div class="foot-col">
+                <h3>Hubungi Kami</h3>
+                <p>WA: 0812-3456-7890</p>
+                <p>Email: halo@aprilnet.id</p>
+            </div>
+            <div class="foot-col">
+                <h3>Jam Operasional</h3>
+                <p>Senin - Sabtu: 08.00 - 20.00</p>
+                <p class="gold">*Bantuan Teknis 24 Jam via WhatsApp</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 APRILNET Network. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
