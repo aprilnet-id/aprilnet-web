@@ -304,3 +304,173 @@ body { font-family: 'Poppins', sans-serif; background: var(--dark); color: #fff;
     .promo-overlay h3 { font-size: 1.5rem; }
     .promo-prev, .promo-next { width: 40px; height: 40px; }
 }
+/* Pastikan container tidak meluap */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%; /* Tambahkan ini */
+    box-sizing: border-box;
+}
+
+/* Gambar harus selalu mengikuti lebar kontainer */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Pastikan section tidak memiliki tinggi tetap (height: 100vh) yang kaku di mobile */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 120px 0 60px; /* Beri ruang untuk navbar */
+    }
+}
+/* Responsif untuk Hero (Teks & Slider Samping) */
+@media (max-width: 992px) {
+    .hero-flex {
+        flex-direction: column; /* Teks di atas, slider di bawah */
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem; /* Perkecil ukuran font di HP */
+    }
+
+    .hero-slider-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .slider-hero {
+        max-width: 100%; /* Biarkan memenuhi lebar layar HP */
+        height: 250px; /* Perkecil tinggi slider di HP */
+    }
+}
+
+/* Responsif untuk Promo Slider (Bawah Header) */
+@media (max-width: 768px) {
+    .promo-wrapper {
+        height: 400px; /* Beri ruang lebih tinggi karena teks mungkin menumpuk */
+    }
+
+    .promo-overlay {
+        left: 5%;
+        right: 5%;
+        text-align: center;
+    }
+
+    .promo-overlay h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Responsif untuk Grid Paket */
+@media (max-width: 768px) {
+    .grid-pricing {
+        grid-template-columns: 1fr; /* Satu kolom saja di HP */
+        gap: 20px;
+    }
+    
+    .card.featured {
+        transform: scale(1); /* Hilangkan efek perbesaran di HP agar tidak terpotong */
+    }
+}
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Sembunyikan menu standar jika belum ada sistem toggle */
+    }
+    
+    /* Atau buat agar bisa di-scroll secara horizontal sebagai solusi cepat */
+    .nav-flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* Styling Tombol Hamburger */
+.menu-toggle {
+    display: none; /* Sembunyikan di desktop */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--toska);
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+/* Responsive Mobile Menu */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Munculkan di smartphone */
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%; /* Sembunyikan menu di sisi kanan luar layar */
+        top: 70px;
+        flex-direction: column;
+        background: rgba(10, 11, 16, 0.98);
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.5s;
+        padding-top: 50px;
+        border-top: 1px solid rgba(0, 242, 255, 0.1);
+    }
+
+    .nav-links.active {
+        right: 0; /* Geser menu ke dalam layar saat aktif */
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    /* Efek animasi X saat diklik */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+/* --- RESPONSIVE FIX --- */
+.menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+.bar { width: 25px; height: 3px; background-color: var(--toska); transition: 0.3s; }
+
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; z-index: 1100; }
+    
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        flex-direction: column;
+        background: #0a0b10;
+        width: 80%;
+        height: 100vh;
+        padding-top: 100px;
+        transition: 0.4s;
+        box-shadow: -10px 0 20px rgba(0,0,0,0.5);
+    }
+
+    .nav-links.active { right: 0; }
+
+    /* Fix Hero Mobile */
+    .hero-flex { flex-direction: column !important; text-align: center; padding-top: 100px; gap: 20px; }
+    .hero-text h1 { font-size: 2.2rem !important; }
+    .hero-slider-container { width: 100% !important; justify-content: center !important; }
+    .slider-hero { height: 200px !important; width: 100% !important; }
+
+    /* Fix Promo Slider Mobile */
+    .promo-wrapper { height: 180px !important; }
+    .promo-nav-btn { width: 30px; height: 30px; }
+}
+
+/* Animasi Hamburger */
+.menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }

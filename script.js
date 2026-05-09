@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Tambahkan kode ini di dalam DOMContentLoaded
+    
+	// Tambahkan kode ini di dalam DOMContentLoaded
 const promoSlides = document.querySelector('.promo-slides');
 const nextBtn = document.querySelector('.promo-next');
 const prevBtn = document.querySelector('.promo-prev');
@@ -82,4 +83,28 @@ function tutupPendaftaran() {
         halDaftar.style.display = 'none';
         window.scrollTo(0, 0);
     }
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('.nav-links');
+
+    // Fungsi Toggle Menu
+    menu.addEventListener('click', function() {
+        menu.classList.toggle('is-active');
+        menuLinks.classList.toggle('active');
+    });
+});
+
+// Fungsi untuk menutup menu saat link diklik (agar tidak menutupi layar)
+function tutupMenu() {
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('.nav-links');
+    
+    if(menu.classList.contains('is-active')) {
+        menu.classList.remove('is-active');
+        menuLinks.classList.remove('active');
+    }
+    
+    // Panggil fungsi tutup pendaftaran jika sedang terbuka
+    tutupPendaftaran(); 
 }

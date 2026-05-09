@@ -10,21 +10,25 @@
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="container nav-flex">
-            <div class="logo">
-                <img src="img/logo.png" alt="Logo APRILNET" class="logo-img">
-                APRIL<span>NET</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" onclick="tutupPendaftaran()">Beranda</a></li>
-                <li><a href="#fitur" onclick="tutupPendaftaran()">Keunggulan</a></li>
-                <li><a href="#paket" onclick="tutupPendaftaran()">Paket</a></li>
-                <li><a href="#profil" onclick="tutupPendaftaran()">Profil</a></li>
-                <li><a href="javascript:void(0)" class="btn-nav" onclick="bukaPendaftaran('Umum')">Daftar Sekarang</a></li>
-            </ul>
+<nav class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">APRIL<span>NET</span></div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-    </nav>
+
+        <ul class="nav-links">
+            <li><a href="#home" onclick="tutupMenu()">Beranda</a></li>
+            <li><a href="#fitur" onclick="tutupMenu()">Keunggulan</a></li>
+            <li><a href="#paket" onclick="tutupMenu()">Paket</a></li>
+            <li><a href="#profil" onclick="tutupMenu()">Profil</a></li>
+            <li><a href="javascript:void(0)" class="btn-nav" onclick="bukaPendaftaran('Umum')">Daftar Sekarang</a></li>
+        </ul>
+    </div>
+</nav>
 
     <div id="main-content">
 		<header id="home" class="hero">
