@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-	// Tambahkan kode ini di dalam DOMContentLoaded
+   // Tambahkan kode ini di dalam DOMContentLoaded
 const promoSlides = document.querySelector('.promo-slides');
 const nextBtn = document.querySelector('.promo-next');
 const prevBtn = document.querySelector('.promo-prev');
@@ -107,4 +106,37 @@ function tutupMenu() {
     
     // Panggil fungsi tutup pendaftaran jika sedang terbuka
     tutupPendaftaran(); 
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('.nav-links');
+
+    if (menu) {
+        menu.addEventListener('click', () => {
+            menu.classList.toggle('is-active');
+            menuLinks.classList.toggle('active');
+        });
+    }
+    
+    // Auto slide promo bawah
+    setInterval(() => {
+        movePromo(1);
+    }, 5000);
+});
+
+let promoIndex = 0;
+function movePromo(direction) {
+    const slides = document.getElementById('promoSlides');
+    if (slides) {
+        promoIndex = (promoIndex + direction + 3) % 3;
+        slides.style.transform = `translateX(-${promoIndex * 33.333}%)`;
+    }
+}
+
+function tutupMenu() {
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('.nav-links');
+    menu.classList.remove('is-active');
+    menuLinks.classList.remove('active');
+    tutupPendaftaran();
 }
