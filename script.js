@@ -1,129 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-   // Tambahkan kode ini di dalam DOMContentLoaded
-const promoSlides = document.querySelector('.promo-slides');
-const nextBtn = document.querySelector('.promo-next');
-const prevBtn = document.querySelector('.promo-prev');
-let index = 0;
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
 
-function updatePromoSlider() {
-    promoSlides.style.transform = `translateX(-${index * 33.333}%)`;
-}
-
-nextBtn.addEventListener('click', () => {
-    index = (index + 1) % 3; // Kembali ke 0 jika sudah slide ke-3
-    updatePromoSlider();
-});
-
-prevBtn.addEventListener('click', () => {
-    index = (index - 1 + 3) % 3; // Ke slide terakhir jika di slide 0
-    updatePromoSlider();
-});
-
-// Auto slide setiap 5 detik
-setInterval(() => {
-    index = (index + 1) % 3;
-    updatePromoSlider();
-}, 5000);
-	// Logic Tab Pilihan Paket
-    const tabs = document.querySelectorAll('.tab-btn');
-    const contents = document.querySelectorAll('.tab-content');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            contents.forEach(c => c.classList.remove('active'));
-
-            tab.classList.add('active');
-            const targetId = 'paket-' + tab.dataset.target;
-            const targetContent = document.getElementById(targetId);
-            if (targetContent) {
-                targetContent.classList.add('active');
-            }
-        });
-    });
-
-    // Perbaikan Integrasi WhatsApp
-    const formPendaftaran = document.getElementById('formPendaftaran');
-    if (formPendaftaran) {
-        formPendaftaran.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const paket = document.getElementById('inputPaket').value;
-            const nama = document.getElementById('regNama').value;
-            const alamat = document.getElementById('regAlamat').value;
-            
-            const waNumber = "628123456789"; // Sesuaikan dengan nomor Anda
-            const message = `Halo Admin APRILNET, saya mau daftar!\n\n${paket}\nNama: ${nama}\nAlamat: ${alamat}`;
-            
-            window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    // Cek apakah elemen ada di halaman
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            // Menambah/menghapus class active dan is-active
+            menuToggle.classList.toggle('is-active');
+            navLinks.classList.toggle('active');
+            console.log("Menu diklik!"); // Cek di console browser (F12)
         });
     }
-});
 
-// Fungsi Navigasi Halaman Pendaftaran
-function bukaPendaftaran(namaPaket) {
-    const mainContent = document.getElementById('main-content');
-    const halDaftar = document.getElementById('halaman-daftar');
-    const inputPaket = document.getElementById('inputPaket');
-
-    if (mainContent && halDaftar && inputPaket) {
-        mainContent.style.display = 'none';
-        halDaftar.style.display = 'block';
-        inputPaket.value = "Paket: " + namaPaket;
-        window.scrollTo(0, 0);
-    }
-}
-
-function tutupPendaftaran() {
-    const mainContent = document.getElementById('main-content');
-    const halDaftar = document.getElementById('halaman-daftar');
-
-    if (mainContent && halDaftar) {
-        mainContent.style.display = 'block';
-        halDaftar.style.display = 'none';
-        window.scrollTo(0, 0);
-    }
-}
-document.addEventListener('DOMContentLoaded', () => {
-    const menu = document.querySelector('#mobile-menu');
-    const menuLinks = document.querySelector('.nav-links');
-
-    // Fungsi Toggle Menu
-    menu.addEventListener('click', function() {
-        menu.classList.toggle('is-active');
-        menuLinks.classList.toggle('active');
-    });
-});
-
-// Fungsi untuk menutup menu saat link diklik (agar tidak menutupi layar)
-function tutupMenu() {
-    const menu = document.querySelector('#mobile-menu');
-    const menuLinks = document.querySelector('.nav-links');
-    
-    if(menu.classList.contains('is-active')) {
-        menu.classList.remove('is-active');
-        menuLinks.classList.remove('active');
-    }
-    
-    // Panggil fungsi tutup pendaftaran jika sedang terbuka
-    tutupPendaftaran(); 
-}
-document.addEventListener('DOMContentLoaded', () => {
-    const menu = document.querySelector('#mobile-menu');
-    const menuLinks = document.querySelector('.nav-links');
-
-    if (menu) {
-        menu.addEventListener('click', () => {
-            menu.classList.toggle('is-active');
-            menuLinks.classList.toggle('active');
-        });
-    }
-    
-    // Auto slide promo bawah
+    // Slider Promo Otomatis
     setInterval(() => {
-        movePromo(1);
+        if (typeof movePromo === "function") movePromo(1);
     }, 5000);
 });
 
+// Fungsi untuk menutup menu saat link diklik
+function tutupMenu() {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinks) {
+        menuToggle.classList.remove('is-active');
+        navLinks.classList.remove('active');
+    }
+}
+
+// Fungsi Slider Promo Bawah
 let promoIndex = 0;
 function movePromo(direction) {
     const slides = document.getElementById('promoSlides');
@@ -131,12 +37,4 @@ function movePromo(direction) {
         promoIndex = (promoIndex + direction + 3) % 3;
         slides.style.transform = `translateX(-${promoIndex * 33.333}%)`;
     }
-}
-
-function tutupMenu() {
-    const menu = document.querySelector('#mobile-menu');
-    const menuLinks = document.querySelector('.nav-links');
-    menu.classList.remove('is-active');
-    menuLinks.classList.remove('active');
-    tutupPendaftaran();
 }

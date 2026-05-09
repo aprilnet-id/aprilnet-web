@@ -469,8 +469,58 @@ img {
     .promo-wrapper { height: 180px !important; }
     .promo-nav-btn { width: 30px; height: 30px; }
 }
-
 /* Animasi Hamburger */
+.menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+/* Styling Dasar Hamburger */
+.menu-toggle {
+    display: none; /* Sembunyikan di Desktop */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1100;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--toska);
+    transition: 0.3s;
+}
+
+/* Tampilan Mobile (Smartphone) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Munculkan di Mobile */
+    }
+
+    .nav-links {
+        display: flex;
+        position: fixed;
+        right: -100%; /* Sembunyikan ke kanan luar layar */
+        top: 0;
+        background: #0a0b10;
+        width: 70%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.4s ease-in-out;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        z-index: 1050;
+    }
+
+    /* KELAS INI YANG MEMBUAT MENU MUNCUL */
+    .nav-links.active {
+        right: 0; /* Geser ke tengah layar */
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+}
+
+/* Animasi Perubahan Garis jadi X */
 .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
 .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
