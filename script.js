@@ -1,5 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Logic Tab Pilihan Paket
+    // Tambahkan kode ini di dalam DOMContentLoaded
+const promoSlides = document.querySelector('.promo-slides');
+const nextBtn = document.querySelector('.promo-next');
+const prevBtn = document.querySelector('.promo-prev');
+let index = 0;
+
+function updatePromoSlider() {
+    promoSlides.style.transform = `translateX(-${index * 33.333}%)`;
+}
+
+nextBtn.addEventListener('click', () => {
+    index = (index + 1) % 3; // Kembali ke 0 jika sudah slide ke-3
+    updatePromoSlider();
+});
+
+prevBtn.addEventListener('click', () => {
+    index = (index - 1 + 3) % 3; // Ke slide terakhir jika di slide 0
+    updatePromoSlider();
+});
+
+// Auto slide setiap 5 detik
+setInterval(() => {
+    index = (index + 1) % 3;
+    updatePromoSlider();
+}, 5000);
+	// Logic Tab Pilihan Paket
     const tabs = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.tab-content');
 

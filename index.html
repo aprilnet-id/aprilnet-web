@@ -27,20 +27,81 @@
     </nav>
 
     <div id="main-content">
-        <header id="home" class="hero">
-            <div class="container">
-                <div class="hero-text">
-                    <h1>Internet Cepat <br>Hingga Ke <span>Pelosok</span></h1>
-                    <p>Menghubungkan desa dengan teknologi Fiber Optic murni yang stabil dan terjangkau untuk semua warga.</p>
-                    <div class="hero-btns">
-                        <a href="#paket" class="btn-primary">Pilih Paket</a>
-                        <a href="#fitur" class="btn-secondary">Lihat Keunggulan</a>
-                    </div>
-                </div>
-            </div>
-        </header>
+		<header id="home" class="hero">
+			<div class="container hero-flex">
+				<div class="hero-text">
+					<h1>Internet Cepat <br>Hingga Ke <span>Pelosok</span></h1>
+					<p>Menghubungkan desa dengan teknologi Fiber Optic murni yang stabil dan terjangkau untuk semua warga.</p>
+					<div class="hero-btns">
+						<a href="#paket" class="btn-primary">Pilih Paket</a>
+						<a href="#fitur" class="btn-secondary">Lihat Keunggulan</a>
+					</div>
+				</div>
 
-        <section id="fitur" class="features-grid container section">
+				<div class="hero-slider-container">
+					<div class="slider">
+						<div class="slides">
+							<div class="slide">
+								<img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800" alt="Instalasi WiFi">
+								<div class="slide-caption">Akses Tanpa FUP</div>
+							</div>
+							<div class="slide">
+								<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800" alt="Teknologi Fiber">
+								<div class="slide-caption">Teknologi Fiber Optic</div>
+							</div>
+							<div class="slide">
+								<img src="https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?w=800" alt="Layanan Pelanggan">
+								<div class="slide-caption">Tim Lokal Sigap</div>
+							</div>
+						</div>
+						<div class="slider-nav">
+							<span class="dot active"></span>
+							<span class="dot"></span>
+							<span class="dot"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+</header>
+
+		<section class="promo-slider-section">
+			<div class="container">
+				<div class="promo-wrapper">
+					<div class="promo-slides">
+						<div class="promo-slide">
+							<img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200" alt="Promo 1">
+							<div class="promo-overlay">
+								<h3>Paket Internet Kecepatan Tinggi yang Terjangkau</h3>
+								<p>Nikmati koneksi stabil tanpa FUP untuk seluruh keluarga Anda.</p>
+								<a href="#paket" class="btn-promo">Lihat Detail</a>
+							</div>
+						</div>
+						<div class="promo-slide">
+							<img src="https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?w=1200" alt="Promo 2">
+							<div class="promo-overlay">
+								<h3>Layanan Pelanggan 24/7</h3>
+								<p>Tim teknisi lokal kami siap membantu Anda kapan saja dibutuhkan.</p>
+								<a href="https://wa.me/628123456789" class="btn-promo">Hubungi Kami</a>
+							</div>
+						</div>
+						<div class="promo-slide">
+							<img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200" alt="Promo 3">
+							<div class="promo-overlay">
+								<h3>Instalasi Cepat & Mudah</h3>
+								<p>Daftar hari ini, pasang besok! Tanpa ribet dan biaya tersembunyi.</p>
+								<a href="javascript:void(0)" class="btn-promo" onclick="bukaPendaftaran('Umum')">Daftar Sekarang</a>
+							</div>
+						</div>
+					</div>
+					
+					<button class="promo-prev"><i class="fas fa-chevron-left"></i></button>
+					<button class="promo-next"><i class="fas fa-chevron-right"></i></button>
+				</div>
+			</div>
+		</section>
+
+		<section id="fitur" class="features-grid container section">
             <div class="feature-item">
                 <i class="fas fa-infinity"></i>
                 <h4>Tanpa Batas (Unlimited)</h4>
@@ -214,7 +275,9 @@
             <p>&copy; 2026 APRILNET Network. All rights reserved.</p>
         </div>
     </footer>
-			<a href="https://wa.me/628123456789" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+	
+		<a href="https://wa.me/628123456789" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
     <script src="script.js"></script>
 </body>
 </html>
