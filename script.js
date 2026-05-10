@@ -1,40 +1,63 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Logika Hamburger Menu
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
-    // Cek apakah elemen ada di halaman
-    if (menuToggle && navLinks) {
+    if (menuToggle) {
         menuToggle.addEventListener('click', () => {
-            // Menambah/menghapus class active dan is-active
             menuToggle.classList.toggle('is-active');
             navLinks.classList.toggle('active');
-            console.log("Menu diklik!"); // Cek di console browser (F12)
         });
     }
 
-    // Slider Promo Otomatis
-    setInterval(() => {
-        if (typeof movePromo === "function") movePromo(1);
-    }, 5000);
+    // 2. Logika Tab Paket (Perbaikan Masalah Voucher)
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-target');
+
+            // Reset active buttons
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Reset active contents
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === targetId) {
+                    content.classList.add('active');
+                }
+            });
+        });
+    });
 });
 
-// Fungsi untuk menutup menu saat link diklik
+// Fungsi Menutup Menu
 function tutupMenu() {
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
-    
-    if (menuToggle && navLinks) {
+    if (menuToggle) {
         menuToggle.classList.remove('is-active');
         navLinks.classList.remove('active');
     }
 }
 
-// Fungsi Slider Promo Bawah
-let promoIndex = 0;
-function movePromo(direction) {
-    const slides = document.getElementById('promoSlides');
-    if (slides) {
-        promoIndex = (promoIndex + direction + 3) % 3;
-        slides.style.transform = `translateX(-${promoIndex * 33.333}%)`;
+// Fungsi Pendaftaran (Global)
+function bukaPendaftaran(namaPaket) {
+    const sectionDaftar = document.getElementById('halaman-daftar');
+    const mainContent = document.getElementById('main-content');
+    const inputPaket = document.getElementById('inputPaket');
+
+    if (sectionDaftar && mainContent) {
+        mainContent.style.display = 'none';
+        sectionDaftar.style.display = 'block';
+        inputPaket.value = namaPaket;
+        window.scrollTo(0, 0);
     }
+}
+
+function tutupPendaftaran() {
+    document.getElementById('halaman-daftar').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
 }

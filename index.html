@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>APRILNET - Internet Solusi Desa</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<nav class="navbar">
+<nav class="navbar">
         <div class="container nav-flex">
             <div class="logo">APRIL<span>NET</span></div>
             
@@ -30,43 +30,27 @@
         </div>
     </nav>
 
-    <div id="main-content">
-		<header id="home" class="hero">
-			<div class="container hero-flex">
-				<div class="hero-text">
-					<h1>Internet Cepat <br>Hingga Ke <span>Pelosok</span></h1>
-					<p>Menghubungkan desa dengan teknologi Fiber Optic murni yang stabil dan terjangkau untuk semua warga.</p>
-					<div class="hero-btns">
-						<a href="#paket" class="btn-primary">Pilih Paket</a>
-						<a href="#fitur" class="btn-secondary">Lihat Keunggulan</a>
-					</div>
-				</div>
-
-				<div class="hero-slider-container">
-					<div class="slider">
-						<div class="slides">
-							<div class="slide">
-								<img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800" alt="Instalasi WiFi">
-								<div class="slide-caption">Akses Tanpa FUP</div>
-							</div>
-							<div class="slide">
-								<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800" alt="Teknologi Fiber">
-								<div class="slide-caption">Teknologi Fiber Optic</div>
-							</div>
-							<div class="slide">
-								<img src="https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?w=800" alt="Layanan Pelanggan">
-								<div class="slide-caption">Tim Lokal Sigap</div>
-							</div>
-						</div>
-						<div class="slider-nav">
-							<span class="dot active"></span>
-							<span class="dot"></span>
-							<span class="dot"></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+<div id="main-content">
+        <header id="home" class="hero">
+            <div class="container hero-flex">
+                <div class="hero-text">
+                    <h1>Internet Cepat <br>Hingga Ke <span>Pelosok</span></h1>
+                    <p>Menghubungkan desa dengan teknologi Fiber Optic murni yang stabil dan terjangkau.</p>
+                    <div class="hero-btns">
+                        <a href="#paket" class="btn-primary">Pilih Paket</a>
+                    </div>
+                </div>
+                <div class="hero-slider-container">
+                    <div class="slider">
+                        <div class="slides">
+                            <div class="slide"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800"><div class="slide-caption">Akses Tanpa FUP</div></div>
+                            <div class="slide"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800"><div class="slide-caption">Teknologi Fiber</div></div>
+                            <div class="slide"><img src="https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?w=800"><div class="slide-caption">Tim Lokal Sigap</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 		<section class="promo-slider-section">
 			<div class="container">
 				<div class="promo-wrapper">
@@ -121,20 +105,18 @@
             </div>
         </section>
 
-        <section id="paket" class="section">
+		<section id="paket" class="section">
             <div class="container">
                 <h2 class="section-title">Pilihan Paket Internet</h2>
-                
                 <div class="tab-wrapper">
                     <div class="tab-nav">
-                        <button class="tab-btn active" data-target="rumah">Paket Rumah</button>
-                        <button class="tab-btn" data-target="voucher">Paket Voucher</button>
+                        <button class="tab-btn active" data-target="paket-rumah">Paket Rumah</button>
+                        <button class="tab-btn" data-target="paket-voucher">Paket Voucher</button>
                     </div>
                 </div>
-
                 <div id="paket-rumah" class="tab-content active">
                     <div class="grid-pricing">
-                        <div class="card">
+                        <div class="card featured">
                             <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500" alt="Lite" class="card-img">
                             <h3>APRIL Lite</h3>
                             <div class="speed">30 <span>Mbps</span></div>
@@ -171,9 +153,9 @@
                     </div>
                 </div>
 
-                <div id="paket-voucher" class="tab-content">
-                    <div class="grid-pricing">
-                        <div class="card">
+					<div id="paket-voucher" class="tab-content">
+						<div class="grid-pricing">
+							<div class="card">
                             <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500" alt="Voucher 1 Jam" class="card-img">
                             <h3>1 JAM</h3>
                             <div class="speed">Voucher</div>
@@ -201,28 +183,28 @@
         </section>
 
         <section id="profil" class="about-section">
-            <div class="about-container">
+            <div class="container about-container">
                 <div class="about-content">
                     <h2 class="section-title-left">Tentang <span>APRILNET</span></h2>
-                    <p class="about-lead">Menghubungkan Pelosok, Membangun Masa Depan Digital Desa.</p>
+					<p class="about-lead">Menghubungkan Pelosok, Membangun Masa Depan Digital Desa.</p>
                     <p>APRILNET adalah penyedia layanan internet (ISP) mikro yang berfokus pada pemerataan akses informasi digital di wilayah pedesaan dan pelosok.</p>
                     <div class="mission-grid">
                         <div class="mission-item">
                             <i class="fas fa-bullseye"></i>
                             <h4>Visi</h4>
-                            <p>Menjadi jembatan digital terpercaya yang menghubungkan setiap rumah.</p>
+                            <p>Menjadi jembatan digital terpercaya.</p>
                         </div>
                         <div class="mission-item">
                             <i class="fas fa-rocket"></i>
                             <h4>Misi</h4>
-                            <p>Menyediakan infrastruktur fiber optik berkualitas tinggi dengan harga terjangkau.</p>
+                            <p>Infrastruktur fiber optik harga terjangkau.</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-stats">
-                    <div class="stat-card"><h3>10+</h3><p>Desa Tercover</p></div>
-                    <div class="stat-card"><h3>500+</h3><p>Pelanggan Setia</p></div>
-                    <div class="stat-card"><h3>24/7</h3><p>Dukungan Teknis</p></div>
+                    <div class="stat-card"><h3>10+</h3><p>Desa</p></div>
+                    <div class="stat-card"><h3>500+</h3><p>Pelanggan</p></div>
+					 <div class="stat-card"><h3>24/7</h3><p>Dukungan Teknis</p></div>
                     <div class="stat-card"><h3>99%</h3><p>Uptime Koneksi</p></div>
                 </div>
             </div>
@@ -278,8 +260,7 @@
         </div>
     </footer>
 	
-		<a href="https://wa.me/628123456789" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
+<a href="https://wa.me/628123456789" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <script src="script.js"></script>
 </body>
 </html>
