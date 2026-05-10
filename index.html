@@ -12,8 +12,9 @@
 
 <nav class="navbar">
         <div class="container nav-flex">
-            <div class="logo">APRIL<span>NET</span></div>
-            
+            <div class="logo">
+             <img src="img/logo.png" alt="Logo" class="logo-img">
+                    APRIL<span>NET</span>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -35,10 +36,6 @@
             <div class="container hero-flex">
                 <div class="hero-text">
                     <h1>Internet Cepat <br>Hingga Ke <span>Pelosok</span></h1>
-                    <p>Menghubungkan desa dengan teknologi Fiber Optic murni yang stabil dan terjangkau.</p>
-                    <div class="hero-btns">
-                        <a href="#paket" class="btn-primary">Pilih Paket</a>
-                    </div>
                 </div>
                 <div class="hero-slider-container">
                     <div class="slider">
@@ -49,40 +46,35 @@
                         </div>
                     </div>
                 </div>
+				 <div class="hero-text">
+                    <p>Menghubungkan desa dengan teknologi Fiber Optic murni yang stabil dan terjangkau.</p>
+                    <div class="hero-btns">
+                        <a href="#paket" class="btn-primary">Pilih Paket</a>
+                    </div>
+                </div>
             </div>
         </header>
 		<section class="promo-slider-section">
 			<div class="container">
 				<div class="promo-wrapper">
-					<div class="promo-slides">
+					<div class="promo-slides" id="promoSlides">
 						<div class="promo-slide">
-							<img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200" alt="Promo 1">
-							<div class="promo-overlay">
-								<h3>Paket Internet Kecepatan Tinggi yang Terjangkau</h3>
-								<p>Nikmati koneksi stabil tanpa FUP untuk seluruh keluarga Anda.</p>
-								<a href="#paket" class="btn-promo">Lihat Detail</a>
-							</div>
+							<img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200">
 						</div>
 						<div class="promo-slide">
-							<img src="https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?w=1200" alt="Promo 2">
-							<div class="promo-overlay">
-								<h3>Layanan Pelanggan 24/7</h3>
-								<p>Tim teknisi lokal kami siap membantu Anda kapan saja dibutuhkan.</p>
-								<a href="https://wa.me/628123456789" class="btn-promo">Hubungi Kami</a>
-							</div>
+							<img src="https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?w=1200">
 						</div>
 						<div class="promo-slide">
-							<img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200" alt="Promo 3">
-							<div class="promo-overlay">
-								<h3>Instalasi Cepat & Mudah</h3>
-								<p>Daftar hari ini, pasang besok! Tanpa ribet dan biaya tersembunyi.</p>
-								<a href="javascript:void(0)" class="btn-promo" onclick="bukaPendaftaran('Umum')">Daftar Sekarang</a>
-							</div>
+							<img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200">
 						</div>
 					</div>
 					
-					<button class="promo-prev"><i class="fas fa-chevron-left"></i></button>
-					<button class="promo-next"><i class="fas fa-chevron-right"></i></button>
+					<button class="promo-nav-btn prev-p" onclick="movePromo(-1)">
+						<i class="fas fa-chevron-left"></i>
+					</button>
+					<button class="promo-nav-btn next-p" onclick="movePromo(1)">
+						<i class="fas fa-chevron-right"></i>
+					</button>
 				</div>
 			</div>
 		</section>

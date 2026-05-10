@@ -601,3 +601,47 @@ html, body { overflow-x: hidden; width: 100%; position: relative; }
 }
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+/* Container Utama Slider Tengah */
+.promo-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+/* Gaya Tombol Panah Slider Tengah */
+.promo-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Latar belakang gelap transparan */
+    border: none;
+    color: var(--toska);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.promo-nav-btn:hover {
+    background: var(--toska);
+    color: #000;
+    box-shadow: 0 0 15px var(--toska);
+}
+
+/* Posisi Panah */
+.prev-p { left: 15px; }
+.next-p { right: 15px; }
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+    .promo-wrapper { height: 200px; }
+    .promo-nav-btn { width: 35px; height: 35px; font-size: 0.9rem; }
+}
