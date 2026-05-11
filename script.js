@@ -134,3 +134,27 @@ function tutupPendaftaran() {
     document.getElementById('halaman-daftar').style.display = 'none';
     document.getElementById('main-content').style.display = 'block';
 }
+// Fungsi untuk menampilkan iklan saat halaman dimuat
+window.onload = function() {
+    // Delay 1 detik sebelum iklan muncul agar lebih halus
+    setTimeout(function() {
+        document.getElementById('modalIklan').style.display = 'flex';
+    }, 1000);
+};
+
+// Fungsi untuk menutup iklan
+function tutupIklan() {
+    document.getElementById('modalIklan').style.display = 'none';
+}
+
+// Update fungsi bukaPendaftaran agar otomatis menutup iklan jika diklik dari sana
+function bukaPendaftaran(namaPaket) {
+    tutupIklan(); // Tutup iklan jika sedang terbuka
+    const sectionDaftar = document.getElementById('halaman-daftar');
+    const inputPaket = document.getElementById('inputPaket');
+    
+    sectionDaftar.style.display = 'block';
+    inputPaket.value = namaPaket;
+    
+    sectionDaftar.scrollIntoView({ behavior: 'smooth' });
+}
