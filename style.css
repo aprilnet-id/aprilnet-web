@@ -138,8 +138,8 @@ body { font-family: 'Poppins', sans-serif; background: var(--dark); color: #fff;
 
 .slider {
     width: 100%;
-    max-width: 450px;
-    height: 300px;
+    max-width: 500px;
+    height: 350px;
     position: relative;
     overflow: hidden;
     border-radius: 25px;
